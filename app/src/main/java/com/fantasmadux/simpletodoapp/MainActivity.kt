@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.fantasmadux.simpletodoapp.adapter.ToDoAdapter
@@ -54,6 +55,8 @@ class MainActivity() : AppCompatActivity(), OnDialogCloseListener {
             AddNewTask.newInstance().show(supportFragmentManager, AddNewTask.TAG)
         }
 
+        val itemTouchHelper: ItemTouchHelper = ItemTouchHelper(RecyclerViewTouchHelper(adapter!!))
+        itemTouchHelper.attachToRecyclerView(recyclerView)
     }
 
     override fun onDialogClose(dialogInterface: DialogInterface) {
