@@ -18,7 +18,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class AddNewTask(
 
-): BottomSheetDialogFragment() {
+) : BottomSheetDialogFragment() {
 
     companion object {
         val TAG = "AddNewTask"
